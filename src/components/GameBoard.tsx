@@ -4,7 +4,8 @@ import { useGameLogic } from '../hooks/useGameLogic';
 const GRID_SIZE = 20;
 const CELL_SIZE = 20;
 
-const GameBoard = () => {
+// 移除 const GameBoard = () => {
+export default function GameBoard() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { 
     snake, 
@@ -13,8 +14,7 @@ const GameBoard = () => {
     highScore,
     gameStatus, 
     difficulty,
-    setDifficulty,
-    resetGame 
+    setDifficulty
   } = useGameLogic();
 
   useEffect(() => {
@@ -117,6 +117,4 @@ const GameBoard = () => {
       />
     </div>
   );
-};
-
-export default GameBoard; 
+} 
